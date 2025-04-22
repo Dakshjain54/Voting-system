@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <div id="login-section" class="section">
+                <h1>Voter Login</h1>
+                <input type="text" id="voter-id" placeholder="Voter ID" style="background-color: transparent;">
+                <button onclick="verifyVoter()">Login</button>
+                <p id="login-error" class="error"></p>
+            </div>
+        </div>
+        
+
+
+        <div id="voting-section" class="section" style="display: none;">
+            <h1>Cast Your Vote</h1>
+            <div class="candidates">
+                <div class="candidate" onclick="selectCandidate('candidate1')">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.0B43DK6obyMl47V7-EuolAHaHb&pid=Api&P=0&h=180" alt="Candidate 1">
+                    <h3>Akhilesh Yadav</h3>
+                    <p>Party: samajvadi party</p>
+                </div>
+                <div class="candidate" onclick="selectCandidate('candidate2')">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.WQCnXQus6aaVezDnPN4xfQHaHv&pid=Api&P=0&h=180" alt="Candidate 2">
+                    <h3>Adityanath yogi</h3>
+                    <p>Party:BJP</p>
+                </div>
+                <div class="candidate" onclick="selectCandidate('candidate3')">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.Fs0B0NOnH5G2rWcbv1bP0AAAAA&pid=Api&P=0&h=180" alt="Candidate 3">
+                    <h3>Rahual gandhi</h3>
+                    <p>Party: Congress </p>
+                </div>
+            </div>
+            <button id="submit-vote" onclick="submitVote()" disabled>Submit Vote</button>
+            <p id="vote-error" class="error"></p>
+        </div>
+
+
+        <div id="results-section" class="section" style="display: none;">
+            <h1>Voting Results</h1>
+            <div id="results-container"></div>
+            <button onclick="resetSystem()">Back to Login</button>
+        </div>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
